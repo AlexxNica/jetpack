@@ -161,8 +161,8 @@ class Jetpack_Sync_Module_Users extends Jetpack_Sync_Module {
 	function maybe_save_user_meta( $meta_id, $user_id, $meta_key, $value ) {
 		
 		if ( $meta_key === 'locale' ) {
-			if( current_filter() === 'deleted_user_meta' ) {
 				do_action( 'jetpack_sync_user_locale', $user_id, '' );
+			if ( current_filter() === 'deleted_user_meta' ) {
 			} else {
 				do_action( 'jetpack_sync_user_locale', $user_id, $value );
 			}
