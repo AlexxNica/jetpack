@@ -160,7 +160,6 @@ class Jetpack_Sync_Module_Users extends Jetpack_Sync_Module {
 	}
 
 	function maybe_save_user_meta( $meta_id, $user_id, $meta_key, $value ) {
-		
 		if ( $meta_key === 'locale' ) {
 			if ( current_filter() === 'deleted_user_meta' ) {
 				do_action( 'jetpack_sync_user_locale_delete', $user_id );
@@ -170,7 +169,6 @@ class Jetpack_Sync_Module_Users extends Jetpack_Sync_Module {
 		}
 		$this->save_user_cap_handler( $meta_id, $user_id, $meta_key, $value );
 	}
-
 
 	function save_user_cap_handler( $meta_id, $user_id, $meta_key, $capabilities ) {
 		// if a user is currently being removed as a member of this blog, we don't fire the event
