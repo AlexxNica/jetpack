@@ -308,7 +308,11 @@ EOT;
 		if ( !is_array( $input ) )
 			$input = array();
 
-		if ( isset( $input['enabled'] ) && '1' == $input['enabled'] ) {
+		if ( ! isset( $input['enabled'] ) ) {
+			$input['enabled'] = '1';
+		}
+
+		if ( '1' == $input['enabled'] ) {
 			$current['enabled'] = true;
 			$current['show_headline'] = ( isset( $input['show_headline'] ) && '1' == $input['show_headline'] );
 			$current['show_thumbnails'] = ( isset( $input['show_thumbnails'] ) && '1' == $input['show_thumbnails'] );
